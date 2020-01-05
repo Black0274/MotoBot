@@ -1,2 +1,1 @@
-# MotoBot
-Task for course CS253 Intellectual Systems.
+A simple bot for Telegram using AIML.
