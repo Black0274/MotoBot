@@ -1,0 +1,394 @@
+﻿<aiml version="1.01" encoding="UTF-8">
+
+  <category>
+    <pattern>ПРИВЕТ</pattern>
+    <template>Приветствую! Я знаю все о двухколесном транспорте! Что тебе нужно?</template>
+  </category>
+
+  <category>
+    <pattern>ЗДАРОВА</pattern>
+    <template>
+      <srai>ПРИВЕТ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ЧТО ПОСОВЕТУЕШЬ</pattern>
+    <template> Ты сначала определись, что тебе нужно? </template>
+  </category>
+
+  <category>
+    <pattern>ХОЧУ *</pattern>
+    <template>
+      <srai>
+        <star/>
+      </srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ДАВАЙ *</pattern>
+    <template>
+      <srai>
+        <star/>
+      </srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>КРУИЗЕР</pattern>
+    <template>
+      Хороший выбор. Не забудь отрастить бороду!
+      <think>
+        <set name="topic">круизер</set>
+      </think>
+    </template>
+  </category>
+
+  <category>
+    <pattern>КРУЗЕР</pattern>
+    <template>
+      <srai>КРУИЗЕР</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ЧОППЕР</pattern>
+    <template>
+      <srai>КРУИЗЕР</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ЧЁППЕР</pattern>
+    <template>
+      <srai>КРУИЗЕР</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>СПОРТ</pattern>
+    <template>
+      <random>
+        <li>А ты что, спортсмен? Ладно, выбирай...</li>
+        <li>Не забудь купить качественную экипировку.</li>
+      </random>
+      <think>
+        <set name="topic">спорт</set>
+      </think>
+    </template>
+  </category>
+
+  <category>
+    <pattern>СПОРТБАЙК</pattern>
+    <template>
+      <srai>СПОРТ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>СКУТЕР</pattern>
+    <template>
+      <random>
+        <li>Каждому коня по средствам!</li>
+        <li>Всё лучше чем пешком.</li>
+        <li>Если вам наплевать на то что о вас подумают, то отличный выбор!</li>
+        <li>Все начинали с малого.</li>
+      </random>
+      <think>
+        <set name="topic">скутер</set>
+      </think>
+    </template>
+  </category>
+
+  <category>
+    <pattern>МОПЕД</pattern>
+    <template>
+      <srai>СКУТЕР</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ВЕЛОСИПЕД</pattern>
+    <template>
+      <random>
+        <li> Серьёзно? Нет, это не ко мне. </li>
+        <li> Зачем тебе это? Посмотри лучше на скутер! То же самое, но педали крутить не надо! </li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ВЕЛИК</pattern>
+    <template>
+      <srai>
+        ВЕЛОСИПЕД
+      </srai>
+    </template>
+  </category>
+  
+  
+
+  <topic name="КРУИЗЕР">
+    <category>
+      <pattern>ЧТО ПОСОВЕТУЕШЬ</pattern>
+      <template> Лучше старичка Harley-Davidson еще ничего не придумали. </template>
+    </category>
+
+    <category>
+      <pattern>ЛУЧШИЙ</pattern>
+      <template>
+        <srai>ЧТО ПОСОВЕТУЕШЬ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>ПОДЕШЕВЛЕ</pattern>
+      <template> Посмотри на Star серию от Yamaha. </template>
+    </category>
+
+    <category>
+      <pattern>У МЕНЯ НЕТ СТОЛЬКО ДЕНЕГ</pattern>
+      <template>
+        <srai>ПОДЕШЕВЛЕ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>ПОДОРОЖЕ</pattern>
+      <template> Богачам подойдет Indian или Victory. </template>
+    </category>
+
+    <category>
+      <pattern>ЧТО ТО УНИКАЛЬНОЕ</pattern>
+      <template>
+        <srai>ПОДОРОЖЕ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>НЕ ХОЧУ КРУЗЕР</pattern>
+      <template>
+        Дело твоё.
+        <think>
+          <set name="topic">старт</set>
+        </think>
+      </template>
+    </category>
+
+    <category>
+      <pattern>* ЧТО ТО ДРУГОЕ</pattern>
+      <template>
+        <srai>НЕ ХОЧУ КРУЗЕР</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>* НЕ ДЛЯ МЕНЯ</pattern>
+      <template>
+        <srai>НЕ ХОЧУ КРУЗЕР</srai>
+      </template>
+    </category>
+  </topic>
+
+
+
+  <topic name="СПОРТ">
+    <category>
+      <pattern>ЧТО ПОСОВЕТУЕШЬ</pattern>
+      <template> Я бы взял Kawasaki Ninja ZX-10R. Красив, быстр, недорог. А ещё он зеленого цвета! </template>
+    </category>
+
+    <category>
+      <pattern>ЛУЧШИЙ</pattern>
+      <template>
+        <srai>ЧТО ПОСОВЕТУЕШЬ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>ПОДЕШЕВЛЕ</pattern>
+      <template> Дешевле ZX-10R ничего стоящего не найдёшь. Разве что скутер. </template>
+    </category>
+
+    <category>
+      <pattern>У МЕНЯ НЕТ СТОЛЬКО ДЕНЕГ</pattern>
+      <template>
+        <srai>ПОДЕШЕВЛЕ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>ПОДОРОЖЕ</pattern>
+      <template> Посмотри на BMW S1000RR. Ничего лучше человечество ещё не создало. </template>
+    </category>
+
+    <category>
+      <pattern>САМЫЙ БЫСТРЫЙ</pattern>
+      <template>
+        <srai>ПОДОРОЖЕ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>НЕ ХОЧУ СПОРТ</pattern>
+      <template>
+        Наверное, ты прав.
+        <think>
+          <set name="topic">старт</set>
+        </think>
+      </template>
+    </category>
+
+    <category>
+      <pattern>* ЧТО ТО ДРУГОЕ</pattern>
+      <template>
+        <srai>НЕ ХОЧУ СПОРТ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>* НЕ ДЛЯ МЕНЯ</pattern>
+      <template>
+        <srai>НЕ ХОЧУ СПОРТ</srai>
+      </template>
+    </category>
+  </topic>
+
+
+  <topic name="СКУТЕР">
+    <category>
+      <pattern>ЧТО ПОСОВЕТУЕШЬ</pattern>
+      <template> Yamaha BWS. Лучший по критерию цена/качество. </template>
+    </category>
+
+    <category>
+      <pattern>ЛУЧШИЙ</pattern>
+      <template>
+        <srai>ЧТО ПОСОВЕТУЕШЬ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>ПОДЕШЕВЛЕ</pattern>
+      <template> Irbis Alpha. Можно найти экземпляр по цене кроссовок. Без шуток. </template>
+    </category>
+
+    <category>
+      <pattern>У МЕНЯ НЕТ СТОЛЬКО ДЕНЕГ</pattern>
+      <template>
+        <srai>ПОДЕШЕВЛЕ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>ПОДОРОЖЕ</pattern>
+      <template> Посмотри на Yamaha T-MAX. Удобство скутера и мощность полноценного мотоцикла в одном флаконе! </template>
+    </category>
+
+    <category>
+      <pattern>САМЫЙ ЛУЧШИЙ</pattern>
+      <template>
+        <srai>ПОДОРОЖЕ</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>НЕ ХОЧУ СКУТЕР</pattern>
+      <template>
+        Да, лучше взять что-то стоящее.
+        <think>
+          <set name="topic">старт</set>
+        </think>
+      </template>
+    </category>
+
+    <category>
+      <pattern>* ЧТО ТО ДРУГОЕ</pattern>
+      <template>
+        <srai>НЕ ХОЧУ СКУТЕР</srai>
+      </template>
+    </category>
+
+    <category>
+      <pattern>* НЕ ДЛЯ МЕНЯ</pattern>
+      <template>
+        <srai>НЕ ХОЧУ СКУТЕР</srai>
+      </template>
+    </category>
+  </topic>
+
+
+
+  <category>
+    <pattern>МУДРОСТЬ</pattern>
+    <template>
+      <random>
+        <li>Чтобы лишить сна тысячи жителей, достаточно одного имбецила и ста децибел.</li>
+        <li>Бросить можно курить, пить, жену, ребёнка, но сцепление бросать нельзя!</li>
+        <li>Между первой и второй не попасть бы на нейтралку</li>
+        <li>Если ездить достаточно быстро, мотоцикл прослужит вам до конца жизни!</li>
+        <li>Сел на Яву — копай яму</li>
+        <li>Четыре колеса возят тело, два колеса возят душу!</li>
+        <li>Если у бабушки был бы мотоцикл, то она была бы байкером.</li>
+        <li>Байкер – это прежде всего добродушный романтик с утончённой творческой натурой… А уж только потом грязная вонючая скотина</li>
+        <li>Мото-лучшее, что может произойти с человеком в жизни!</li>
+        <li>Два колеса возят душу, а четыре возят тушу</li>
+        <li>То, что между ног — не транспорт, а удовольствие</li>
+        <li>У японских мотоциклов руль справа</li>
+        <li>Вчера я угнала мотоцикл, сегодня я угоню твое сердце…</li>
+        <li>В любви как в мотоцикле – третий в коляске </li>
+        <li>Жизнь слишком коротка, чтобы тащиться на четырех колесах. </li>
+        <li>Гаишники спрашивают у мотоциклиста: – Как вы могли сесть на мотоцикл в пьяном виде? – А мне товаpищи помогли…</li>
+        <li>Байкеры не умирают, они превращаются в ветер… </li>
+        <li>Есть пьющие байкеры, есть старые байкеры, — но не то и другое сразу.</li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ЦИТАТУ</pattern>
+    <template>
+      <srai>МУДРОСТЬ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ЦИТАТА</pattern>
+    <template>
+      <srai>МУДРОСТЬ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ЦИТАТКУ</pattern>
+    <template>
+      <srai>МУДРОСТЬ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ЧТО РАССКАЖЕШЬ</pattern>
+    <template>
+      <srai>МУДРОСТЬ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ВЫДАЙ ЧТО НИБУДЬ</pattern>
+    <template>
+      <srai>МУДРОСТЬ</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>*</pattern>
+    <template>
+      <random>
+        <li>Не понял. У этой штуки точно два колеса?</li>
+        <li>Не, такого не знаю.</li>
+        <li>Давай поконкретнее, а?</li>
+      </random>
+    </template>
+  </category>
+</aiml>
